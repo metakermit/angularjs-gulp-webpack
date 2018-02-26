@@ -8,7 +8,7 @@ export class TodoService {
   addTodo(text, todos) {
     return [
       {
-        id: (todos.length === 0) ? 0 : todos[0].id + 1,
+        id: todos.length === 0 ? 0 : todos[0].id + 1,
         completed: false,
         text
       }
@@ -17,9 +17,9 @@ export class TodoService {
 
   completeTodo(id, todos) {
     return todos.map(todo => {
-      return todo.id === id ?
-        Object.assign({}, todo, {completed: !todo.completed}) :
-        todo;
+      return todo.id === id
+        ? Object.assign({}, todo, { completed: !todo.completed })
+        : todo;
     });
   }
 
@@ -29,15 +29,15 @@ export class TodoService {
 
   editTodo(id, text, todos) {
     return todos.map(todo => {
-      return todo.id === id ?
-        Object.assign({}, todo, {text}) :
-        todo;
+      return todo.id === id ? Object.assign({}, todo, { text }) : todo;
     });
   }
 
   completeAll(todos) {
     const areAllMarked = todos.every(todo => todo.completed);
-    return todos.map(todo => Object.assign({}, todo, {completed: !areAllMarked}));
+    return todos.map(todo =>
+      Object.assign({}, todo, { completed: !areAllMarked })
+    );
   }
 
   clearCompleted(todos) {
@@ -46,4 +46,3 @@ export class TodoService {
     });
   }
 }
-

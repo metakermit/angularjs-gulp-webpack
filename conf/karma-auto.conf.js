@@ -1,6 +1,6 @@
 const conf = require('./gulp.conf');
 
-module.exports = function (config) {
+module.exports = function(config) {
   const configuration = {
     basePath: '../',
     singleRun: false,
@@ -9,24 +9,16 @@ module.exports = function (config) {
     junitReporter: {
       outputDir: 'test-reports'
     },
-    browsers: [
-      'PhantomJS'
-    ],
-    frameworks: [
-      'jasmine'
-    ],
+    browsers: ['PhantomJS'],
+    frameworks: ['jasmine'],
     files: [
       'node_modules/es6-shim/es6-shim.js',
       conf.path.src('index.spec.js'),
       conf.path.src('**/*.html')
     ],
     preprocessors: {
-      [conf.path.src('index.spec.js')]: [
-        'webpack'
-      ],
-      [conf.path.src('**/*.html')]: [
-        'ng-html2js'
-      ]
+      [conf.path.src('index.spec.js')]: ['webpack'],
+      [conf.path.src('**/*.html')]: ['ng-html2js']
     },
     ngHtml2JsPreprocessor: {
       stripPrefix: `${conf.paths.src}/`

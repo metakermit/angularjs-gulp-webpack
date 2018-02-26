@@ -13,13 +13,13 @@ class TodoTextInputController {
 
   handleBlur() {
     if (!this.newTodo) {
-      this.onSave({text: this.text});
+      this.onSave({ text: this.text });
     }
   }
 
   handleSubmit(e) {
     if (e.keyCode === 13) {
-      this.onSave({text: this.text});
+      this.onSave({ text: this.text });
       if (this.newTodo) {
         this.text = '';
       }
@@ -28,7 +28,9 @@ class TodoTextInputController {
 
   focus() {
     this.$timeout(() => {
-      const element = this.$window.document.querySelector('.editing .textInput');
+      const element = this.$window.document.querySelector(
+        '.editing .textInput'
+      );
       if (element) {
         element.focus();
       }

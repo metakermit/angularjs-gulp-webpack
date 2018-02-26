@@ -4,9 +4,7 @@ module.exports = {
     loaders: [
       {
         test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
+        loaders: ['json-loader']
       },
       {
         test: /\.js$/,
@@ -17,16 +15,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [
-          'ng-annotate-loader',
-          'babel-loader'
-        ]
+        loaders: ['ng-annotate-loader', 'babel-loader']
       },
       {
         test: /\.html$/,
-        loaders: [
-          'html-loader'
-        ]
+        loaders: ['html-loader']
       }
     ]
   },

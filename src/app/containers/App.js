@@ -1,5 +1,5 @@
-import {SHOW_ALL} from '../constants/TodoFilters';
-import {initialTodo} from '../todos/todos';
+import { SHOW_ALL } from '../constants/TodoFilters';
+import { initialTodo } from '../todos/todos';
 
 class AppController {
   constructor() {

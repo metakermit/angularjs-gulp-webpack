@@ -5,7 +5,8 @@ class MainSectionController {
   constructor(todoService) {
     this.todoService = todoService;
     this.selectedFilter = visibilityFilters[this.filter];
-    this.completeReducer = (count, todo) => todo.completed ? count + 1 : count;
+    this.completeReducer = (count, todo) =>
+      todo.completed ? count + 1 : count;
   }
 
   handleClearCompleted() {

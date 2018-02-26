@@ -1,6 +1,6 @@
 import angular from 'angular';
 import 'angular-mocks';
-import {MainSection} from './MainSection';
+import { MainSection } from './MainSection';
 
 describe('MainSection component', () => {
   class MockTodoService {
@@ -22,9 +22,11 @@ describe('MainSection component', () => {
     angular.mock.module('mainSection');
   });
 
-  beforeEach(angular.mock.inject($componentController => {
-    component = $componentController('mainSection', {}, {});
-  }));
+  beforeEach(
+    angular.mock.inject($componentController => {
+      component = $componentController('mainSection', {}, {});
+    })
+  );
 
   it('shoud call clearCompleted', () => {
     spyOn(component.todoService, 'clearCompleted').and.callThrough();
@@ -41,7 +43,7 @@ describe('MainSection component', () => {
   it('shoud set selectedFilter', () => {
     component.handleShow('show_completed');
     expect(component.selectedFilter.type).toEqual('show_completed');
-    expect(component.selectedFilter.filter({completed: true})).toEqual(true);
+    expect(component.selectedFilter.filter({ completed: true })).toEqual(true);
   });
 
   it('shoud call completeTodo', () => {
@@ -52,13 +54,13 @@ describe('MainSection component', () => {
 
   it('shoud call deleteTodo', () => {
     spyOn(component.todoService, 'deleteTodo').and.callThrough();
-    component.handleSave({text: ''});
+    component.handleSave({ text: '' });
     expect(component.todoService.deleteTodo).toHaveBeenCalled();
   });
 
   it('shoud call editTodo', () => {
     spyOn(component.todoService, 'editTodo').and.callThrough();
-    component.handleSave({text: 'Hello'});
+    component.handleSave({ text: 'Hello' });
     expect(component.todoService.editTodo).toHaveBeenCalled();
   });
 

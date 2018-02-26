@@ -1,4 +1,4 @@
-import {TodoService, initialTodo} from './todos';
+import { TodoService, initialTodo } from './todos';
 
 describe('TodoService', () => {
   let todos;

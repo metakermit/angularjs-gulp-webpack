@@ -13,9 +13,7 @@ module.exports = {
     loaders: [
       {
         test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
+        loaders: ['json-loader']
       },
       {
         test: /\.js$/,
@@ -33,16 +31,11 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [
-          'ng-annotate-loader',
-          'babel-loader'
-        ]
+        loaders: ['ng-annotate-loader', 'babel-loader']
       },
       {
         test: /\.html$/,
-        loaders: [
-          'html-loader'
-        ]
+        loaders: ['html-loader']
       }
     ]
   },
@@ -54,11 +47,11 @@ module.exports = {
       template: conf.path.src('index.html')
     }),
     new webpack.optimize.UglifyJsPlugin({
-      output: {comments: false},
-      compress: {unused: true, dead_code: true, warnings: false} // eslint-disable-line camelcase
+      output: { comments: false },
+      compress: { unused: true, dead_code: true, warnings: false } // eslint-disable-line camelcase
     }),
     new ExtractTextPlugin('index-[contenthash].css'),
-    new webpack.optimize.CommonsChunkPlugin({name: 'vendor'}),
+    new webpack.optimize.CommonsChunkPlugin({ name: 'vendor' }),
     new webpack.LoaderOptionsPlugin({
       options: {
         postcss: () => [autoprefixer]
@@ -71,6 +64,8 @@ module.exports = {
   },
   entry: {
     app: `./${conf.path.src('index')}`,
-    vendor: Object.keys(pkg.dependencies).filter(dep => ['todomvc-app-css'].indexOf(dep) === -1)
+    vendor: Object.keys(pkg.dependencies).filter(
+      dep => ['todomvc-app-css'].indexOf(dep) === -1
+    )
   }
 };

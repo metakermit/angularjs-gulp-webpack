@@ -1,8 +1,6 @@
 module.exports = {
-  extends: [
-    'angular'
-  ],
+  extends: ['angular'],
   rules: {
     'angular/no-service-method': 0
   }
-}
+};

@@ -18,7 +18,7 @@ class TodoItemController {
   }
 
   handleDestroy(id) {
-    this.onDestroy({id});
+    this.onDestroy({ id });
   }
 }
 

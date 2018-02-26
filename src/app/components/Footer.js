@@ -1,4 +1,8 @@
-import {SHOW_ALL, SHOW_COMPLETED, SHOW_ACTIVE} from '../constants/TodoFilters';
+import {
+  SHOW_ALL,
+  SHOW_COMPLETED,
+  SHOW_ACTIVE
+} from '../constants/TodoFilters';
 
 class FooterController {
   constructor() {
@@ -15,7 +19,7 @@ class FooterController {
   }
 
   handleChange(filter) {
-    this.onShow({filter});
+    this.onShow({ filter });
   }
 }
 

@@ -11,9 +11,7 @@ module.exports = {
     loaders: [
       {
         test: /\.json$/,
-        loaders: [
-          'json-loader'
-        ]
+        loaders: ['json-loader']
       },
       {
         test: /\.js$/,
@@ -23,26 +21,16 @@ module.exports = {
       },
       {
         test: /\.(css|scss)$/,
-        loaders: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
-          'postcss-loader'
-        ]
+        loaders: ['style-loader', 'css-loader', 'sass-loader', 'postcss-loader']
       },
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loaders: [
-          'ng-annotate-loader',
-          'babel-loader'
-        ]
+        loaders: ['ng-annotate-loader', 'babel-loader']
       },
       {
         test: /\.html$/,
-        loaders: [
-          'html-loader'
-        ]
+        loaders: ['html-loader']
       }
     ]
   },
